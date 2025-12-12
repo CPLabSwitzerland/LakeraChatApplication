@@ -73,7 +73,8 @@ gunicorn -b 0.0.0.0:5000 backend.app:app -k gevent --timeout 60
 - Access the web interface in your browser at `http://localhost:5000`
 - Each chat session is stored in memory (`CHAT_SESSIONS`) for the current server run
 - LLM responses are handled via `llm/llm.py`
-- API logic is in `lakera/lakera.py`
+- Lakera Guard integration is in `lakera/lakera.py`
+- Chat logic is in `backend/app.py`
 - Logs are written to `logs/LakeraApplication.log`
 
 ---
