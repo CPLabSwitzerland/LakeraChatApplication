@@ -1,0 +1,57 @@
++------------------------+
+|   User (Web Browser)   |
++------------------------+
+            |
+            | 1. Sends message via chat UI (app.js)
+            v
++------------------------+
+|   Flask App (app.py)   |
++------------------------+
+            |
+            | 2. Log user message
+            v
++------------------------+
+|   Logger (utils/)      |
++------------------------+
+            |
+            | 3. Input screening
+            v
++------------------------+
+| Lakera Guard (lakera/) |
+| screen_with_lakera()   |
++------------------------+
+      | flagged? True/False
+      |----------------
+      | False -> Continue
+      | True  -> Return blocked message to user
+            |
+            v
++------------------------+
+|  LLM (llm/llm.py)      |
+|  generate/stream()     |
++------------------------+
+            |
+            | 4. Generate assistant response
+            v
++------------------------+
+|  Output Screening      |
+|  Lakera Guard          |
+|  screen_with_lakera()  |
++------------------------+
+      | flagged? True/False
+      |----------------
+      | False -> Stream response to frontend
+      | True  -> Stream "Blocked by Lakera" message
+            |
+            v
++------------------------+
+|  Flask App (app.py)    |
+|  Stream to UI via      |
+|  Response() generator  |
++------------------------+
+            |
+            v
++------------------------+
+|   User Chat UI         |
+|   chat.html + app.js   |
++------------------------+

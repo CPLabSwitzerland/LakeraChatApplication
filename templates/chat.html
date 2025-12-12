@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Chat with Lakera Guard</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; background: #fafafa; }
+    #messages { border: 1px solid #ccc; padding: 1em; min-height: 200px; background: #fff; }
+    .user { color: blue; }
+    .assistant { color: green; }
+    #inputForm { margin-top: 1em; }
+  </style>
+</head>
+<body>
+  <h2>AI Chat with Lakera Guard</h2>
+  <div id="messages">
+    {% for m in messages %}
+      <div class="{{m.role}}"><strong>{{m.role.title()}}:</strong> {{ m.content }}</div>
+    {% endfor %}
+  </div>
+  <form id="inputForm" action="/" method="POST">
+    <input type="text" name="user_input" placeholder="Type your message..." size="40" autocomplete="off" />
+    <button type="submit">Send</button>
+  </form>
+
+  <!-- Clear chat button -->
+  <form id="clearForm" action="/clear" method="POST">
+    <button type="submit">Clear Chat</button>
+  </form>
+</body>
+</html>

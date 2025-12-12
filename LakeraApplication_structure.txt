@@ -1,0 +1,25 @@
+LakeraApplication/
+│
+├── .env			# secrets
+│
+├── backend/
+│   ├── app.py                  # Flask UI APP               
+│   │
+│   ├── templates/		# HTML structure
+│   │   └── chat.html
+│   │
+│   └── static/
+│       ├── app.js		# All CSS styles
+│       └── style.css		# All JS functions
+│
+├── lakera/
+│   └── lakera.py               # Lakera Guard API logic
+│
+├── llm/
+│   └── llm.py                  # LLM integration logic
+│
+├── utils/
+│   └── logger_setup.py         # Logger setup
+│
+└── logs/
+    └── LakeraApplication.log
