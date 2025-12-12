@@ -21,7 +21,7 @@ def screen_with_lakera(input_text, output_text=None):
 
     payload = {
         "messages": messages,
-        "project_id": "project-4015144908"
+        "project_id": os.getenv("LAKERA_PROJECT_ID")
     }
     headers = {"Authorization": f"Bearer {API_KEY}"}
 
