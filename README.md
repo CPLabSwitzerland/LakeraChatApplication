@@ -59,6 +59,7 @@ pip install -r requirements.txt
 ```
 FLASK_SECRET_KEY=your_flask_secret_here
 LAKERA_API_KEY=your_api_key_here
+LAKERA_PROJECT_ID=your_project_ID
 ```
 
 > ⚠️ Do **not** commit your `.env` file. It is excluded in `.gitignore` for security.
