@@ -63,14 +63,10 @@ LAKERA_API_KEY=your_api_key_here
 
 > ⚠️ Do **not** commit your `.env` file. It is excluded in `.gitignore` for security.
 
-5. **Run the Flask app:**
+5. **Run the Flask app with unicorn gevent**
 
-```bash
-cd backend
-flask run
-```
+gunicorn -b 0.0.0.0:5000 backend.app:app -k gevent --timeout 60
 
----
 
 ## 📌 Usage
 
